@@ -5,7 +5,7 @@ const User = require('../models/user');
 
 const router = express.Router();
 
-
+// Signup Route
 router.post('/signup', async (req, res) => {
   const { username, email, password } = req.body;
 
@@ -25,7 +25,7 @@ router.post('/signup', async (req, res) => {
   }
 });
 
-
+// Signin Route
 router.post('/signin', async (req, res) => {
   const { email, password } = req.body;
 
@@ -47,7 +47,7 @@ router.post('/signin', async (req, res) => {
   }
 });
 
-
+// Protected Route
 router.get('/protected', (req, res) => {
   const token = req.headers.authorization?.split(' ')[1];
 
